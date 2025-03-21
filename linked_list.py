@@ -37,5 +37,8 @@ class LinkedList:
 
 
 
-def add(self,data):
-   new_node = Node(data)
+   def add(self,data):
+   # Adds a new node containing data at the head of the list Takes 0(1) time.
+     new_node = Node(data)
+     new_node.next_node = self.head
+     self.head = new_node
