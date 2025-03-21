@@ -34,3 +34,7 @@ def merge(left,right):
     while i < len(left) and j < len(right):
         if left[i] < right[j]:
             l.append(left[i])
+            i += 1
+        else:
+          l.append(right[j])
+          j += 1  
