@@ -1,7 +1,8 @@
 def merge_sort(list):
     # Sort a list in ascending order ,returns a new sorted list, divide: find the midpoint of the list and divide into sublists 
     # Conquer: Recursively sort the sublists created in previous step
-    # Combine: Merge the sorted sublists created in previous step 
+    # Combine: Merge the sorted sublists created in previous step
+    #  Takes 0( log n ) time
     if len(list) <= 1:
         return list
     
@@ -65,3 +66,5 @@ def verify_sort(list):
 
 print(verify_sort(alist))
 print(verify_sort(l))
+# Takes overall 0(log n) time
+# Runs in overall 0(n) time
