@@ -44,15 +44,40 @@
 #      self.head = new_node
 
 class node:
-    def __init__(self,data=None):
-        self.data=data
-        self.data=None
-
+    def __init__(self, data=None):
+        self.data = data      # Correct: Assign the data passed in
+        self.next = None      # Add next pointer
 
 class linked_list:
     def __init__(self):
-        self.head = node()
+        self.head = node()  # Dummy node to simplify appending
 
-    def append(self,data):
+    def append(self, data):
         new_node = node(data)
         cur = self.head
+        while cur.next is not None:
+            cur = cur.next
+        cur.next = new_node
+
+    def length(self):
+        cur = self.head
+        total = 0
+        while cur.next is not None:
+            total += 1
+            cur = cur.next
+        return total
+
+    def display(self):
+        elems = []
+        cur_node = self.head
+        while cur_node.next is not None:
+            cur_node = cur_node.next
+            elems.append(cur_node.data)
+        print(elems)
+
+# Test the list
+my_list = linked_list()
+my_list.append(3)
+my_list.append(5)
+
+my_list.display()  # Output: [3, 5]
